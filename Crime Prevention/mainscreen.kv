@@ -1,0 +1,73 @@
+<Button>:
+
+	color: 0,0,0,1.0
+	size_hint: 0.5, 0.1
+	background_color: (0,128,128,0.2)
+	font_name: 'Arial'
+	bold: 'bool'
+
+
+
+
+
+<MyScreenManager>:
+    FirstScreen:
+    SecondScreen:
+
+<FirstScreen>:
+    name: "Mainmenu"
+    Image:
+        source: 'D:\pycharm images\wallpaper3.jpg'
+        allow_stretch: True
+        keep_ratio: False
+
+    FloatLayout:
+
+        ActionBar:
+            background_color: (.18, .5, .95, .5)
+            pos_hint: {'top':1}
+            ActionView:
+                use_separator: True
+                ActionPrevious:
+                    title: 'CrimePred'
+                    with_previous: False
+                ActionButton:
+                    text: 'Change Location'
+                    pos_hint: {"center_x": .2, "center_y":0.5}
+
+
+
+        Button:
+            text: "Crime Rate"
+            pos_hint: {"center_x": 0.5, "center_y":0.75}
+            on_release: app.root.current = 'second'
+        Button:
+            text: "Criminals Around You"
+            pos_hint: {"center_x": 0.5, "center_y":0.55}
+            on_press: self.parent.ids.text = 'district'
+
+
+        Button:
+            text: "Probable Suspect"
+            pos_hint: {"center_x": 0.5,"center_y":0.35}
+        Button:
+            text: "Crime Forum"
+            pos_hint: {"center_x": 0.5, "center_y":0.15}
+<SecondScreen>:
+    name: 'second'
+    Image:
+        source: 'D:\pycharm images\wallpaper2.jpg'
+        allow_stretch: True
+        keep_ratio: False
+    FloatLayout:
+
+        Button:
+            text: "Tutoriaaaaals"
+            pos_hint: {"center_x": 0.5, "center_y":0.8}
+        Button:
+            text: "taaaaials"
+            pos_hint: {"center_x": 0.5,"center_y":0.5}
+        Button:
+            text: "Return to Main Menu"
+            pos_hint: {"center_x": 0.5, "center_y":0.2}
+            on_release: app.root.current = 'Mainmenu'
