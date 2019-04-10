@@ -1,4 +1,4 @@
-<Button>:
+<Button>:                                         #default attributes of the button
 
 	color: 0,0,0,1.0
 	size_hint: 0.5, 0.1
@@ -10,21 +10,21 @@
 
 
 
-<MyScreenManager>:
+<MyScreenManager>:                                   #screen class
     FirstScreen:
     SecondScreen:
 
-<FirstScreen>:
+<FirstScreen>:                                       #attributes of the opening screen
     name: "Mainmenu"
     Image:
-        source: 'D:\pycharm images\wallpaper3.jpg'
+        source: 'D:\pycharm images\wallpaper3.jpg'   #background image
         allow_stretch: True
         keep_ratio: False
 
-    FloatLayout:
+    FloatLayout:                                     #screen layout
 
-        ActionBar:
-            background_color: (.18, .5, .95, .5)
+        ActionBar:                                   #action bar attributes
+            background_color: (.18, .5, .95, .5)    
             pos_hint: {'top':1}
             ActionView:
                 use_separator: True
