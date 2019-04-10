@@ -16,7 +16,7 @@ class SecondScreen(Screen):
 class MyScreenManager(ScreenManager):
     pass
 
-class mainscreen(App):
+class mainscreen(App):                                   #main screen is the .kv file
     def build(self):
         return MyScreenManager()
 
