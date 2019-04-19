@@ -34,6 +34,7 @@ class ThirdScreen(Screen):
    #print(text)
    ward = ObjectProperty(None)                           #Declaring as objectproperty to get value from .kv file
    district = ObjectProperty(None)
+   resultt = ObjectProperty(None)
    beat = ObjectProperty(None)
    community_area = ObjectProperty(None)
    primary_type = ObjectProperty(None)
@@ -41,9 +42,7 @@ class ThirdScreen(Screen):
    def btn(self):                                        #function to get the values from .kv 
        x = database.find_id(self.ward.text, self.district.text,self.beat.text, self.community_area.text, self.primary_type.text,
                self.location.text)
-       #print("Name : ", self.a.text, " Email : ", self.b.text)
-       print(x)
-
+       self.resultt.text ="Possible Suspect Ids are: \n 1) " + str(x[0][1]) + "\n 2) " + str(x[1][1]) + "\n 3) " + str(x[2][1]) + "\n 4) " + str(x[3][1]) + "\n 5) " + str(x[4][1])
 
 class FourthScreen(Screen):
     report = ObjectProperty(None)
@@ -64,11 +63,12 @@ class SixthScreen(Screen):
     district1 = ObjectProperty(None)
     beat1 = ObjectProperty(None)
     community_area1 = ObjectProperty(None)
+    ress = ObjectProperty(None)
 
     def btn2(self):
-        x = around_you.find_id(self.ward1.text, self.district1.text, self.beat1.text, self.community_area1.text)
-        print(x)
-        return x
+        b = around_you.find_id(self.ward1.text, self.district1.text, self.beat1.text, self.community_area1.text)
+        self.ress.text = "Possible Suspect Ids are: \n 1) " + str(b[0][1]) + "\n 2) " + str(
+            b[1][1]) + "\n 3) " + str(b[2][1]) + "\n 4) " + str(b[3][1]) + "\n 5) " + str(b[4][1])
 
 class MyScreenManager(ScreenManager):                                        #MyScreenManager has been used to manage all the screens
     pass
