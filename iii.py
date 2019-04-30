@@ -25,9 +25,10 @@ import itertools
 
 def kmean_plot():
     variables = pandas.read_csv('cleaned_data.csv')
-    Y = np.array(variables[['Latitude']])
+    variables_new = variables[variables['Primary Type']=='THEFT']
+    Y = np.array(variables_new[['Latitude']])
 
-    X = np.array(variables[['Longitude']])
+    X = np.array(variables_new[['Longitude']])
 
     X_train, X_test, y_train, y_test = train_test_split(X,Y,test_size=.1, random_state=42)
 
